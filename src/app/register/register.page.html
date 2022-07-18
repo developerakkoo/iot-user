@@ -1,15 +1,15 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Register</ion-title>
+    <ion-title></ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="login"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<!-- <ion-content> -->
 
-  <ion-grid >
+  <!-- <ion-grid >
     <ion-row>
       <ion-col size="12">
         <ion-item>
@@ -29,8 +29,48 @@
       </ion-col>
       <ion-col size="6"></ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
+<!-- </ion-content> -->
+<ion-content  [fullscreen]="true" class="ion-margin-top" >
+
+  <div class="img-wrapper ion-margin-top" >
+    <div class="img ">
+      <img style="margin-top:10px; display:flex; justify-content:center; align-items: center;" src="../../assets/Group 4.svg" alt="" srcset="">
+    </div>
+
+  </div>
+  <div class="ion-margin-top" >
+    <div class="Register">
+    <h1 class="ion-text-center">Register User</h1>
+    </div>
+
+  </div>
+
+
+
+
+<div class="Main">
+
+<div class="Input ion-margin-top">
+<!-- Input with placeholder -->
+<ion-input placeholder="Email"></ion-input>
+</div>
+<div class="Input" >
+<!-- Input with placeholder -->
+<ion-input placeholder="password"></ion-input>
+</div>
+
+<div class="Input" >
+  <!-- Input with placeholder -->
+  <ion-input placeholder="Mobile No"></ion-input>
+  </div>
+
+
+</div>
+ 
+
 </ion-content>
+
 <ion-footer>
   <ion-toolbar color="primary">
     <ion-button color="light" (click)="register()" expand="block" fill="clear" shape="round">

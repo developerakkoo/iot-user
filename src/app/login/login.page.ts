@@ -84,4 +84,8 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+  uLogin(){
+    this.router.navigate(['profile']);
+
+  }
 }
