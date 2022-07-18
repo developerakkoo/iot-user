@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { DataService } from './services/data.service';
 import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
@@ -6,13 +8,33 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Profile', url: '/profile', icon: 'person' },
+    { title: 'Contact Us', url: '/folder/Outbox', icon: 'walk' },
+    { title: 'About', url: '/folder/Favorites', icon: 'help' },
+   
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  username;
+  email;
+
+
+  constructor(private data: DataService,
+              private router: Router) {
+
+              
+    this.data.get("userId").then((user) =>{
+      if(user !=null){
+        
+        console.log(`userID found:- ${user}`);
+        this.router.navigate(['folder']);
+      }
+    }).catch((error) =>{
+      console.log(error);
+      
+    })
+
+    this.data.get("user").then((user) =>{
+      this.username = user['mobileNo'];
+      this.email = user['email']
+    })
+  }
 }
